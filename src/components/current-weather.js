@@ -2,7 +2,7 @@ import React from 'react';
 import './current-weather.css';
 
 const cweath = (props) => {
-    if(!props.data) {
+    if(!props.data.current_observation) {
         return <p>Loading...</p>
     }
     const details = props.data.current_observation;
