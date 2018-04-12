@@ -25,6 +25,7 @@ const fweath = (props) => {
     return (
         <div>
             <h1>Hourly Forecast</h1>
+            <div class="table-responsive-sm">
             <table className="table">
                 <thead>
                     <tr>
@@ -40,6 +41,7 @@ const fweath = (props) => {
                     {forecast_display}
                 </tbody>
             </table>
+            </div>
         </div>
     );
     

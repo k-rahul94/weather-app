@@ -18,18 +18,16 @@ class App extends Component {
   }
 
   setDetails() {
-    if(navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        let lat = position.coords.latitude;
-        let lng = position.coords.longitude;
-        this.setState({lat,lng});
-        this.fetchWeather(lat,lng)
-      });
-    } else {
-      console.log("Geo Location not supported by browser");
-    }
+    let locationRequest = "http://ip-api.com/json";
+    let myLocationRequest = new Request(locationRequest);
+    fetch(myLocationRequest, {method:'get'}).then((resp) => resp.json()).then((location_data) => {
+      this.setState({
+        lat: location_data.lat,
+        lng: location_data.lon});
+      this.fetchWeather(location_data.lat, location_data.lon);
+    });
   }
- 
+
 
   fetchWeather(lat,lng) {
 
@@ -44,7 +42,7 @@ class App extends Component {
       this.setState({forecast_data})
     });
   }
-  
+
   render() {
     return (
       <div className="App">
