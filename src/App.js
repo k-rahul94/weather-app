@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   setDetails() {
-    let locationRequest = "http://ip-api.com/json";
+    let locationRequest = "https://ip-api.com/json";
     let myLocationRequest = new Request(locationRequest);
     fetch(myLocationRequest, {method:'get'}).then((resp) => resp.json()).then((location_data) => {
       this.setState({
