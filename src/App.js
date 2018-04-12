@@ -31,8 +31,8 @@ class App extends Component {
 
   fetchWeather(lat,lng) {
 
-    let currentRequest = "http://api.wunderground.com/api/b5bcbc142e1efa77/conditions/q/" + lat + ","+ lng + ".json";
-    let forecastRequest = "http://api.wunderground.com/api/b5bcbc142e1efa77/hourly/q/" + lat + "," + lng + ".json";
+    let currentRequest = "https://api.wunderground.com/api/b5bcbc142e1efa77/conditions/q/" + lat + ","+ lng + ".json";
+    let forecastRequest = "https://api.wunderground.com/api/b5bcbc142e1efa77/hourly/q/" + lat + "," + lng + ".json";
     let myCurrentRequest = new Request(currentRequest);
     let myForecastRequest = new Request(forecastRequest);
     fetch(myCurrentRequest, {method:'get'}).then((resp) => resp.json()).then((current_data) => {
