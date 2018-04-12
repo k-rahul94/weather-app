@@ -7,21 +7,7 @@ const cweath = (props) => {
     }
     const details = props.data.current_observation;
     const imageUrl = details.icon_url;
-    // const weather = props.data.weather[0];
-    // const weatherItem = props.data.weather[0].description;
-    // const itemChars = weatherItem.charAt(0).toUpperCase() + weatherItem.toLowerCase().slice(1);
-    // const imageUrl = "http://openweathermap.org/img/w/" + weather.icon + ".png";
-    // return (
-        
-    //     <div className="jumbotron">
-    //         <img src={imageUrl} className="weatherImg"/>
-    //         <h5>Current Weather</h5>
-    //         <h1>{props.city}</h1>
-    //         <h1 className="display-4">{props.data.main.temp}&#8457;</h1>
-    //         <p className="lead">{itemChars}</p>
-    //         <hr className="my-4"/>
-    //         <p>Pressure: {props.data.main.pressure}hPa CloudCov: {props.data.clouds.all}%</p>
-    //     </div>
+
     return(
         <div className="jumbotron">
             <img src={imageUrl} />

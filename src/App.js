@@ -18,13 +18,13 @@ class App extends Component {
   }
 
   setDetails() {
-    let locationRequest = "https://ip-api.com/json";
+    let locationRequest = "https://ipapi.co/json";
     let myLocationRequest = new Request(locationRequest);
     fetch(myLocationRequest, {method:'get'}).then((resp) => resp.json()).then((location_data) => {
       this.setState({
-        lat: location_data.lat,
-        lng: location_data.lon});
-      this.fetchWeather(location_data.lat, location_data.lon);
+        lat: location_data.latitude,
+        lng: location_data.longitude});
+      this.fetchWeather(location_data.latitude, location_data.longitude);
     });
   }
 

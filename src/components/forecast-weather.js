@@ -1,7 +1,6 @@
 import React from 'react';
 
 const fweath = (props) => {
-    console.log(props.data);
     if(!props.data.hourly_forecast) {
         return <p>Loading...</p>
     }
